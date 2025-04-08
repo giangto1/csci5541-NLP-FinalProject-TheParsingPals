@@ -141,14 +141,14 @@
 
 <h2 id="teaser">Teaser Figure</h2>
 
-<p>A figure that conveys the main idea behind the project or the main application being addressed. This figure is from</p>
+<p>A figure that conveys the main idea behind the project or the main application being addressed.</p>
 
 <p class="sys-img"><img src="./csci5541_webtemplate/files/teaser.png" alt="imgname"></p>
 
 
-<h3 id="the-timeline-and-the-highlights">Any subsection</h3>
+<!-- <h3 id="the-timeline-and-the-highlights">Any subsection</h3>
 
-<p>If you need to explain more about your figure</p>
+<p>If you need to explain more about your figure</p> -->
 
 <hr>
 
@@ -224,6 +224,7 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
 <p>
   Since we have only generated the transcripts of audio using PhoWhisper, we depend on the WER metric to measure how accurate the transcripts are compared to the text reference. 
 </p>
+
 <table>
   <thead>
     <tr>
@@ -245,12 +246,21 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
   </tbody>
   <caption>Table 1. WER for the PhoWhisper's transcription</caption>
 </table>
-<p>Below are the WERs for each data point in each dialect</p>
-<a href='./csci5541_webtemplate/files/hanoi.png'></a>
-<a href='./csci5541_webtemplate/files/hue.png'></a>
-<a href='./csci5541_webtemplate/files/nghean.png'></a>
-<a href='./csci5541_webtemplate/files/saigon.png'></a>
 
+<p>Below are the WERs for each data point in each dialect
+<br>
+<a href='./csci5541_webtemplate/files/hanoi.png'></a>
+</br>
+<br>
+<a href='./csci5541_webtemplate/files/hue.png'></a>
+</br>
+<br>
+<a href='./csci5541_webtemplate/files/nghean.png'></a>
+</br>
+<br>
+<a href='./csci5541_webtemplate/files/saigon.png'></a>
+</br>
+</p>
 <!-- <br>
 <div style="text-align: center;">
 <img style="height: 300px;" alt="" src="./files/results.png">
