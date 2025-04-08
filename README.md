@@ -244,7 +244,7 @@ and advance Vietnamese Speech-to-Text models from transcription to standardize-l
       <td style="text-align: center">0.1105</td>
     </tr>
   </tbody>
-  <caption>Table 1. WER for the PhoWhisper's transcription of each dialect</caption>
+  <caption>Table 1. WER for the PhoWhisper's transcription</caption>
 </table>
 <!-- <br>
 <div style="text-align: center;">
