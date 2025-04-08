@@ -143,7 +143,7 @@
 
 <p>A figure that conveys the main idea behind the project or the main application being addressed. This figure is from</p>
 
-<p class="sys-img"><img src="./files/teaser.png" alt="imgname"></p>
+<p class="sys-img"><img src="./csci5541_webtemplate/files/teaser.png" alt="imgname"></p>
 
 
 <h3 id="the-timeline-and-the-highlights">Any subsection</h3>
