@@ -249,16 +249,16 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
 
 <p>Below are the WERs for each data point in each dialect
 <br>
-<a href='./csci5541_webtemplate/files/hanoi.png'>Ha Noi WER</a>
+<img src='./csci5541_webtemplate/files/hanoi.png' alt='Hanoi WER'>
 </br>
 <br>
-<a href='./csci5541_webtemplate/files/hue.png'>Hue WER</a>
+<img src='./csci5541_webtemplate/files/hue.png' alt='Hue WER'>
 </br>
 <br>
-<a href='./csci5541_webtemplate/files/nghean.png'>Nghe An WER</a>
+<img src='./csci5541_webtemplate/files/nghean.png' alt='Nghe An WER'>
 </br>
 <br>
-<a href='./csci5541_webtemplate/files/saigon.png'>Sai Gon WER</a>
+<img src='./csci5541_webtemplate/files/saigon.png' alt='Sai Gon WER'>
 </br>
 </p>
 <!-- <br>
