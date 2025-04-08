@@ -258,12 +258,12 @@ and advance Vietnamese Speech-to-Text models from transcription to standardize-l
 
 <h2 id="conclusion">Conclustion and Future Work</h2>
 <p>
-
+  <b>
   How easily are your results able to be reproduced by others?
   Did your dataset or annotation affect other people's choice of research or development projects to undertake?
   Does your work have potential harm or risk to our society? What kinds? If so, how can you address them?
   What limitations does your model have? How can you extend your work for future research?</p>
-
+  </b>
 <p>
   - Our results might be easily reproduced by others since the pipeline is relatively simple. However, since there is not much data 
   on dialectal Vietnamese language systematically collected and annotated even though these dialects are still used prominently in each region, 
