@@ -293,8 +293,8 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
   <br>
   WER: 0.3103 <br>
   REF: em cũng muốn là được sử dụng cái kỳ thi đánh giá năng lực này giống như là một cái con đường khác được xét tuyển vào đại học <br>
-  HYP: em cũng muốn là được ờ sử dụng cái kỳ thị giáng lực này giống như một cái con đường khác ờ được xét tiểu đại học <br>
-  <b>Error type: spelling</b> <br>
+  HYP: em cũng muốn là được ờ sử dụng cái <b>kỳ thị</b> giáng lực này giống như một cái con đường khác ờ được <b>xét tiểu</b> đại học <br>
+  <b>Error type: spelling, contain filler words</b> <br>
 
 </p>
 <hr>
