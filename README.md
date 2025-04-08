@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
 <!-- saved from url=(0014)about:internet -->
 <html lang=" en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
@@ -141,7 +141,7 @@
 
 <h2 id="teaser">Teaser Figure</h2>
 
-<p>A figure that conveys the main idea behind the project or the main application being addressed. This figure is from <a href="https://arxiv.org/pdf/2210.07469">StyLEx</a>.</p>
+<p>A figure that conveys the main idea behind the project or the main application being addressed. This figure is from</p>
 
 <p class="sys-img"><img src="./files/teaser.png" alt="imgname"></p>
 
