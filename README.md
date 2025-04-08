@@ -266,12 +266,40 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
 <img style="height: 300px;" alt="" src="./files/results.png">
 </div>
 <br><br> -->
+<p><b>Error Analysis</b></p>
+<p>
+  Since Nghe An is the hardest dialects, we expect the WER to be highest among these samples. Here are TOP 5 samples that have the highest WER from the Nghe An audio samples:
+  WER: 0.6000
+  REF: cảm thấy tự tin hơn
+  HYP: <b>ờ</b> cảm thấy <b>a</b> tự tin hơn <b>hơn</b>
+  <b>Error type: added random words</b>
+  
+  WER: 0.5833
+  REF: thấy an tâm thôi cứ tốt sức khỏe cho cộng đồng thôi
+  HYP: thấy an tâm thôi <b>thôi</b> <b>tôi thắp<b> cho sức khoẻ <b>ổn đồng</b> thôi
+  <b>Error type: duplicate words, spelling, grammar, word order</b>
+  
+  WER: 0.4167
+  REF: hôm nay tôi rất là vinh dự được khám của các ba bác sĩ chữa để mà tư vấn về sức khỏe nhất là xương khớp nghe tôi mừng quá chỉ dẫn rất là nhiệt tình
+  HYP: <b>sẽ ra bữa</b> hôm nay tôi rất vinh dự được ra khám của các bác sĩ chữa để mà tư vấn về sức khoẻ nhất nhất là cái là <b>sương</b> khớp nghe tôi mừng quá vì nó <b>chỉ</b> chỉ dẫn rất nhiệt tình
+  <b>Error type: spelling, added random words, duplicate words, missing words</b>
+  
+  WER: 0.3111
+  REF: ủy ban nhân dân phường với coi như là đảng ủy phường kêu gọi thì tất cả những bác sĩ chúng tôi đều đăng ký hết tôi là người cao tuổi nhất coi như là cũng là người coi như là xung phong   tham gia
+  HYP: ủy ban nhân dân phường mới lại coi như đã đồng ý phường kêu gọi thì tất cả những bác sĩ là chúng tôi đều đăng ký hết tôi là <b>cái người</b> mà cao tuổi nhất là cũng là coi như là <b>cái người</b> mà coi như là xung phong tham gia
+  <b>Error type: duplicate words </b>
 
+  WER: 0.3103
+  REF: em cũng muốn là được sử dụng cái kỳ thi đánh giá năng lực này giống như là một cái con đường khác được xét tuyển vào đại học
+  HYP: em cũng muốn là được ờ sử dụng cái kỳ thị giáng lực này giống như một cái con đường khác ờ được xét tiểu đại học
+  <b>Error type: spelling</b>
+
+</p>
 <hr>
 
 
 
-<h2 id="conclusion">Conclustion and Future Work</h2>
+<h2 id="conclusion">Conclusion and Future Work</h2>
 <p><b>Conclusion</b></p>
 <p>
   From the above figures and table, our conclusion is that the WER for all data points are low, which means the PhoWhisper model is making accurate transcripts. However, this is not what we are expecting. We expect too see words that are written wrongly in tonal and words that are unique to a local dialect, not a perfect spelling and perfect standardized language in the transcripts, especially for hard dialects like Nghe An. This is due to our audio data containing only news anchor voices, and the news they are reading from contains only standardized scripts. Therefore, the audio are standardized language read in light tonal voices and meant to be easy to understand. For this reason, our next steps require us to find audios that are more heavy in dialect tones.
