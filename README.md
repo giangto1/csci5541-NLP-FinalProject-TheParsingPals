@@ -272,6 +272,10 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
 
 
 <h2 id="conclusion">Conclustion and Future Work</h2>
+<p><b>Conclusion</b></p>
+<p>
+  From the above figures and table, our conclusion is that the WER for all data points are low, which means the PhoWhisper model is making accurate transcripts. However, this is not what we are expecting. We expect too see words that are written wrongly in tonal and words that are unique to a local dialect, not a perfect spelling and perfect standardized language in the transcripts, especially for hard dialects like Nghe An. This is due to our audio data containing only news anchor voices, and the news they are reading from contains only standardized scripts. Therefore, the audio are standardized language read in light tonal voices and meant to be easy to understand. For this reason, our next steps require us to find audios that are more heavy in dialect tones.
+</p>
 <p>
   <b>
   How easily are your results able to be reproduced by others?
