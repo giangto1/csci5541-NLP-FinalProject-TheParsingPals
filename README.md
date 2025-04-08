@@ -245,6 +245,12 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
   </tbody>
   <caption>Table 1. WER for the PhoWhisper's transcription</caption>
 </table>
+<p>Below are the WERs for each data point in each dialect</p>
+<a href='./csci5541_webtemplate/files/hanoi.png'></a>
+<a href='./csci5541_webtemplate/files/hue.png'></a>
+<a href='./csci5541_webtemplate/files/nghean.png'></a>
+<a href='./csci5541_webtemplate/files/saigon.png'></a>
+
 <!-- <br>
 <div style="text-align: center;">
 <img style="height: 300px;" alt="" src="./files/results.png">
