@@ -271,30 +271,30 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
   
   Since Nghe An is the hardest dialects, we expect the WER to be highest among these samples. Here are TOP 5 samples that have the highest WER from the Nghe An audio samples:
   <br>
-  WER: 0.6000
-  REF: cảm thấy tự tin hơn
-  HYP: <b>ờ</b> cảm thấy <b>a</b> tự tin hơn <b>hơn</b>
-  <b>Error type: added random words</b>
+  WER: 0.6000 <br>
+  REF: cảm thấy tự tin hơn <br>
+  HYP: <b>ờ</b> cảm thấy <b>a</b> tự tin hơn <b>hơn</b> <br>
+  <b>Error type: added random words</b> <br>
   <br>
-  WER: 0.5833
-  REF: thấy an tâm thôi cứ tốt sức khỏe cho cộng đồng thôi
-  HYP: thấy an tâm thôi <b>thôi</b> <b>tôi thắp<b> cho sức khoẻ <b>ổn đồng</b> thôi
-  <b>Error type: duplicate words, spelling, grammar, word order</b>
+  WER: 0.5833<br>
+  REF: thấy an tâm thôi cứ tốt sức khỏe cho cộng đồng thôi <br>
+  HYP: thấy an tâm thôi <b>thôi</b> <b>tôi thắp<b> cho sức khoẻ <b>ổn đồng</b> thôi <br>
+  <b>Error type: duplicate words, spelling, grammar, word order</b> <br>
   <br>
-  WER: 0.4167
-  REF: hôm nay tôi rất là vinh dự được khám của các ba bác sĩ chữa để mà tư vấn về sức khỏe nhất là xương khớp nghe tôi mừng quá chỉ dẫn rất là nhiệt tình
-  HYP: <b>sẽ ra bữa</b> hôm nay tôi rất vinh dự được ra khám của các bác sĩ chữa để mà tư vấn về sức khoẻ nhất nhất là cái là <b>sương</b> khớp nghe tôi mừng quá vì nó <b>chỉ</b> chỉ dẫn rất nhiệt tình
-  <b>Error type: spelling, added random words, duplicate words, missing words</b>
+  WER: 0.4167 <br>
+  REF: hôm nay tôi rất là vinh dự được khám của các ba bác sĩ chữa để mà tư vấn về sức khỏe nhất là xương khớp nghe tôi mừng quá chỉ dẫn rất là nhiệt tình <br>
+  HYP: <b>sẽ ra bữa</b> hôm nay tôi rất vinh dự được ra khám của các bác sĩ chữa để mà tư vấn về sức khoẻ nhất nhất là cái là <b>sương</b> khớp nghe tôi mừng quá vì nó <b>chỉ</b> chỉ dẫn rất nhiệt tình <br>
+  <b>Error type: spelling, added random words, duplicate words, missing words</b> <br>
   <br>
-  WER: 0.3111
-  REF: ủy ban nhân dân phường với coi như là đảng ủy phường kêu gọi thì tất cả những bác sĩ chúng tôi đều đăng ký hết tôi là người cao tuổi nhất coi như là cũng là người coi như là xung phong   tham gia
-  HYP: ủy ban nhân dân phường mới lại coi như đã đồng ý phường kêu gọi thì tất cả những bác sĩ là chúng tôi đều đăng ký hết tôi là <b>cái người</b> mà cao tuổi nhất là cũng là coi như là <b>cái người</b> mà coi như là xung phong tham gia
-  <b>Error type: duplicate words </b>
+  WER: 0.3111 <br>
+  REF: ủy ban nhân dân phường với coi như là đảng ủy phường kêu gọi thì tất cả những bác sĩ chúng tôi đều đăng ký hết tôi là người cao tuổi nhất coi như là cũng là người coi như là xung phong   tham gia <br>
+  HYP: ủy ban nhân dân phường mới lại coi như đã đồng ý phường kêu gọi thì tất cả những bác sĩ là chúng tôi đều đăng ký hết tôi là <b>cái người</b> mà cao tuổi nhất là cũng là coi như là <b>cái người</b> mà coi như là xung phong tham gia <br>
+  <b>Error type: duplicate words </b> <br>
   <br>
-  WER: 0.3103
-  REF: em cũng muốn là được sử dụng cái kỳ thi đánh giá năng lực này giống như là một cái con đường khác được xét tuyển vào đại học
-  HYP: em cũng muốn là được ờ sử dụng cái kỳ thị giáng lực này giống như một cái con đường khác ờ được xét tiểu đại học
-  <b>Error type: spelling</b>
+  WER: 0.3103 <br>
+  REF: em cũng muốn là được sử dụng cái kỳ thi đánh giá năng lực này giống như là một cái con đường khác được xét tuyển vào đại học <br>
+  HYP: em cũng muốn là được ờ sử dụng cái kỳ thị giáng lực này giống như một cái con đường khác ờ được xét tiểu đại học <br>
+  <b>Error type: spelling</b> <br>
 
 </p>
 <hr>
