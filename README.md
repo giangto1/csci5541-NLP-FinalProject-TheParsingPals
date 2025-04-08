@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NLP Class Project | Spring 2025 CSCI 5541 | University of Minnesota</title>
 
-  <link rel="stylesheet" href="./files/bulma.min.css" />
+  <link rel="stylesheet" href="./csci5541_webtemplate/files/bulma.min.css" />
 
-  <link rel="stylesheet" href="./files/styles.css">
+  <link rel="stylesheet" href="./csci5541_webtemplate/files/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com/">
   <link href="./files/css2" rel="stylesheet">
   <link href="./files/css" rel="stylesheet">
@@ -21,7 +21,7 @@
   <div>
     <div class="wrapper">
       <h1 style="font-family: &#39;Lato&#39;, sans-serif;">Speech-to-Text: Translate Dialects to Official Vietnamese Language</h1>
-      <h4 style="font-family: &#39;Lato&#39;, sans-serif; ">Spring CSCI 5541 NLP: Class Project - University of Minnesota</h4>
+      <h4 style="font-family: &#39;Lato&#39;, sans-serif; ">Spring 2025 CSCI 5541 NLP: Class Project - University of Minnesota</h4>
       <h4 style="font-family: &#39;Lato&#39;, sans-serif; ">The Parsing Pals</h4>
 
       <div class="authors-wrapper">
@@ -197,11 +197,10 @@ We also collect audio data of dense dialectal voices from Youtube, Tiktok to add
 <p>
 We believe this is a reliable framework because of our strategy in choosing dialects, which is representative of all different common dialects in Vietnamese language.
 Besides, the PhoWhisper and PhoBERT are model already fine tuned models in Vietnamese language. Our study will also include a comparative analysis on other LLMs such as 
-GPT-3 and Qwen-3. (add why choose specifically gpt-3 and qwen-3)
+GPT-3 and Qwen-3.
 </p>
 <p>
-The novelty in our work is the effort to deeply investigate the process of using LLMs to translate dialectal text to standardize text instead of just training LLMs based on multiple and diverse text (standardized text and dialectal text altogether)
-and advance Vietnamese Speech-to-Text models from transcription to standardize-language-translation. 
+The novelty of our work lies in our in-depth investigation of how to leverage large language models (LLMs) to translate dialectal text into standardized language, rather than simply training LLMs on a mixture of dialectal and standardized text. This approach also advances Vietnamese speech-to-text systems by moving beyond transcription to include translation into standardized language. 
 
 </p>
 
