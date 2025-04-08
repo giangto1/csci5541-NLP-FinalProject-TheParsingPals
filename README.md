@@ -278,7 +278,7 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
   <br>
   WER: 0.5833<br>
   REF: thấy an tâm thôi cứ tốt sức khỏe cho cộng đồng thôi <br>
-  HYP: thấy an tâm thôi <b>thôi</b> <b>tôi thắp<b> cho sức khoẻ <b>ổn đồng</b> thôi <br>
+  HYP: thấy an tâm thôi <b>thôi</b> <b>tôi thắp</b> cho sức khoẻ <b>ổn đồng</b> thôi <br>
   <b>Error type: duplicate words, spelling, grammar, word order</b> <br>
   <br>
   WER: 0.4167 <br>
