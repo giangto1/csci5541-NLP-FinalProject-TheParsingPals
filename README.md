@@ -247,6 +247,35 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
   <caption>Table 1. WER for the PhoWhisper's transcription</caption>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Dialect</strong></th>
+      <th style="text-align: center">Nghe An</th>
+      <th style="text-align: center">Hue</th>
+      <th style="text-align: center">Ha Noi</th>
+      <th style="text-align: center">Sai Gon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>WER</strong></td>
+      <td style="text-align: center">0.4424</td>
+      <td style="text-align: center">0.2134</td>
+      <td style="text-align: center">0.5785</td>
+      <td style="text-align: center">0.3522</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>BERTScore</strong></td>
+      <td style="text-align: center">0.8543</td>
+      <td style="text-align: center">0.9088</td>
+      <td style="text-align: center">0.8505</td>
+      <td style="text-align: center">0.8797</td>
+    </tr>
+  </tbody>
+  <caption>Table 1. WER for the PhoWhisper's transcription</caption>
+</table>
+
 <p>Below are the WERs for each data point in each dialect
 <br>
 <img src='./csci5541_webtemplate/files/hanoi.png' alt='Hanoi WER'>
