@@ -273,7 +273,7 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
       <td style="text-align: center">0.8797</td>
     </tr>
   </tbody>
-  <caption>Table 1. WER for the PhoWhisper's transcription</caption>
+  <caption>Table 2. WER and BERTScore for the finetuned PhoWhisper's transcription</caption>
 </table>
 
 <p>Below are the WERs for each data point in each dialect
