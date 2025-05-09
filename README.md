@@ -106,6 +106,8 @@
               target="_blank"
               class="external-link button is-normal is-rounded is-dark is-outlined"
             >
+            <span>Code</span>
+            </a>
             
           </span>              
         </div>
