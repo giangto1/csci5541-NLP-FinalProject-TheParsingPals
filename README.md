@@ -134,7 +134,6 @@
 pre-trained models have improved Vietnamese STT overall, their performance on dialectal speech remains limited. To address this issue, our project focuses on developing a pipeline that transcribes dialectal Vietnamese speech into standardized Vietnamese text – instead of providing a direct word-for-word transcription, the system generates standard Vietnamese to help bridge communication gaps within the community. Our work demonstrates the feasibility of this approach, showing that fine-tuning existing models on curated dialectal speech data can significantly improve performance in dialectal STT. In addition, we propose future directions for advancing Vietnamese STT, including more robust model adaptation and dialect-aware dataset development.
 </p>
 
-<hr>
 
 <!-- <h3 id="the-timeline-and-the-highlights">Any subsection</h3>
 
@@ -170,7 +169,7 @@ Based on our pipeline, we take in input as audio files from the dataset: <a href
 </p>
 
 <b>Pipeline</b>
-<p class="sys-img"><img src="./csci5541_webtemplate/files/pipeline.pdf" alt="imgname"></p>
+<p class="sys-img"><img src="./csci5541_webtemplate/files/pipeline-1.png" alt="imgname"></p>
 <p> Using audio inputs, we first generate Vietnamese transcripts with the pre-trained PhoWhisper model. Based on its initial performance in terms of Word Error Rate (WER) and BERTScore, we fine-tune PhoWhisper to improve upon these baseline results. We then use PhoGPT to convert the dialectal transcripts into standardized Vietnamese. For benchmarking purposes, we also evaluate a parallel pipeline using OpenAI’s Whisper-large for automatic speech recognition (ASR) and GPT-4 for text normalization—two of the most advanced models in global speech and language processing. </p> 
 <p> We consider this a reliable framework due to our deliberate selection of dialects that represent the most commonly spoken regional variations in Vietnamese. Additionally, both PhoWhisper and PhoGPT are models specifically fine-tuned for the Vietnamese language, making them well-suited for this task. Our study also includes a comparative analysis against OpenAI’s Whisper-large and GPT-4 to assess the effectiveness of language-specific versus general-purpose models. </p> 
 <p> The novelty of our work lies in its in-depth exploration of how to leverage large language models (LLMs) to translate dialectal text into standardized Vietnamese, rather than simply training on a mixture of dialectal and standard inputs. This approach enhances Vietnamese STT systems by moving beyond basic transcription, enabling accurate and semantically coherent translation across dialects, and ultimately improving accessibility and communication for Vietnamese speakers worldwide. </p>
