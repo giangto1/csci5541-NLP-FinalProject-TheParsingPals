@@ -375,7 +375,7 @@ We evaluated the OpenAI Whisper model on 280 audio recordings from the Nghệ An
 <p>
   <b>80-10-10 split model error analysis</b>
   <figure style="text-align: center;">
-  <img src="images/80-10-10_err.png" alt="Performance chart of best models of 80-10-10 split" style="max-width: 100%; height: auto;">
+  <img src="./csci5541_webtemplate/files/80-10-10_err.png" alt="Performance chart of best models of 80-10-10 split" style="max-width: 100%; height: auto;">
   <figcaption><strong>Figure:</strong> Performance of best fine-tuned models on 80-10-10 split</figcaption>
 </figure>
 
@@ -383,7 +383,7 @@ We evaluated the OpenAI Whisper model on 280 audio recordings from the Nghệ An
 <p>
   <b>90-5-5 split model error analysis</b>
   <figure style="text-align: center;">
-  <img src="images/90-5-5_err.png" alt="Performance chart of best models of 90-5-5 split" style="max-width: 100%; height: auto;">
+  <img src="./csci5541_webtemplate/files/90-5-5_err.png" alt="Performance chart of best models of 90-5-5 split" style="max-width: 100%; height: auto;">
   <figcaption><strong>Figure:</strong> Performance of best fine-tuned models on 90-5-5 split</figcaption>
 </figure>
 
