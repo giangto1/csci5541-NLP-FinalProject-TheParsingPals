@@ -391,29 +391,7 @@ We evaluated the OpenAI Whisper model on 280 audio recordings from the Nghệ An
 
 
 <h2 id="conclusion">Conclusion and Future Work</h2>
-<p><b>Conclusion</b></p>
-<p>
-  From the above figures and table, our conclusion is that the WER for all data points are low, which means the PhoWhisper model is making accurate transcripts. However, this is not what we are expecting. We expect too see words that are written wrongly in tonal and words that are unique to a local dialect, not a perfect spelling and perfect standardized language in the transcripts, especially for hard dialects like Nghe An. This is due to our audio data containing only news anchor voices, and the news they are reading from contains only standardized scripts. Therefore, the audio are standardized language read in light tonal voices and meant to be easy to understand. For this reason, our next steps require us to find audios that are more heavy in dialect tones.
-</p>
-<p>
-  <b>
-  How easily are your results able to be reproduced by others?
-  Did your dataset or annotation affect other people's choice of research or development projects to undertake?
-  Does your work have potential harm or risk to our society? What kinds? If so, how can you address them?
-  What limitations does your model have? How can you extend your work for future research?</p>
-  </b>
-<p>
-  - Our results might be easily reproduced by others since the pipeline is relatively simple. However, since there is not much data 
-  on dialectal Vietnamese language systematically collected and annotated even though these dialects are still used prominently in each region, 
-  combined with the fact that the PhoWhisper and PhoBERT model are new, no work has been done on this yet.
-</p>
-<p>
-  - Some limitations our model might have is its runtime. It took us 50 mins to load the dataset, and 1.5 hours to run the PhoWhisper model on 
-  4 different dialects. 
-
-</p>
-<hr>
-
+This project explored Vietnamese dialectal speech recognition by developing a pipeline combining PhoWhisper for transcription and PhoGPT for translating dialectal speech into standardized Vietnamese. Fine-tuning PhoWhisper on curated dialect data showed notable improvements in Word Error Rate (WER) and BERTScore for certain configurations, though gains were not consistent across all error types—some fine-tuned models reduced disfluencies but increased insertions or omissions. In contrast, OpenAI's Whisper performed poorly on dialectal inputs like Nghệ An, producing incoherent outputs despite being explicitly configured for Vietnamese, which rendered it unusable for downstream processing with GPT-4. These findings underscore the limitations of general-purpose STT models for low-resource, dialectally diverse languages and highlight the need for fine-tuning on dialect-specific datasets. Moving forward, efforts should focus on expanding dialectal corpora, improving model generalization across regions, and incorporating linguistic knowledge to reduce transcription errors—ultimately advancing more inclusive and robust Vietnamese STT systems.
 
   </div>
   
