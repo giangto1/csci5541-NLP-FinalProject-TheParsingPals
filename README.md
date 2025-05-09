@@ -273,7 +273,7 @@ Initially, we performed finetuning for the model with 830 audio samples as the t
   <caption>Table 2. WER and BERTScore for the finetuned PhoWhisper's transcription</caption>
 </table>
 
-Since the output of the finetuned model is significantly worse compared to the baseline model, we exhaustively fine-tuned the model by varying the parameters: optimizer, learning rate, batch size, and train-validation-test split. We use the following parameter combinations and report the WER and BERTScore below:
+Since the output of the finetuned model is significantly worse compared to the baseline model, we exhaustively fine-tuned the model by varying the parameters: optimizer, learning rate, batch size, and train-validation-test split. We also just focus on 1 dialect (Nghe An - level 4) due to time constraint and wanting to make sure of the quality of the outputs. We use the following parameter combinations and report the WER and BERTScore below:
 
 <table border="1" style="border-collapse: collapse; text-align: center;">
   <caption><strong>Table 3. Percentage change in WER and BERTScore relative to baseline</strong></caption>
@@ -322,7 +322,7 @@ Since the output of the finetuned model is significantly worse compared to the b
 The columns WER change % and BERTScore change % is the change compared to the WER and BERTScore of the pretrained models. Table 3 shows that the best model obtained is the PhoWhisper-large (1.55B) that is finetuned on the Adam optimizer with learning rate 1e-5. The table also suggests that there is a slight trade off between the BERTScore and WER metric, as the model with highest BERTScore has a lower WER, and the model with the highest WER has a lower BERTScore. Another finding was that most models that were fine-tuned with a 80-10-10 train-validation-test split performs better that which was fine-tuned with a 90-5-5 train-validation-test split.
 </p>
 <p>
-<b>Evaluation of the full pipeline after fine-tuning</b>
+<b>Evaluation of the full pipeline after fine-tuning</b> <br>
 <b>PhoWhisper + PhoGPT Pipeline (80-10-10 split): </b>
 Using the best-performing fine-tuned PhoWhisper model, we tested the full pipeline by passing its dialectal transcriptions to PhoGPT-4B-Chat with the instruction “Translate this sentence into standard Vietnamese.” On the test set with an 80-10-10 split, PhoWhisper produced an average WER of 0.0796. However, after standardization with PhoGPT, the WER increased sharply to 0.7022. While some increase is expected due to the shift from phonetic to semantic output, the magnitude was unusually high. Manual inspection revealed that PhoGPT often omitted dialect-specific words or restructured sentences rather than translating terms directly, suggesting a preference for sentence-level fluency and coherence over word-level fidelity.
 </p>
@@ -333,8 +333,61 @@ We evaluated the OpenAI Whisper model on 280 audio recordings from the Nghệ An
 </p>
 
 <p><b>Error Analysis</b></p>
+<p><b>PhoWhisper-Large (1.55B)</b></p>
+<p> Common errors: <br>
+<ul>
+  <li> Misrecognition: Some words were misrecognized and substituted with similar-sounding but incorrect words.</li>
+  <li> Disfluencies: Irrelevant words were inserted. Common insertions included filler sounds such as "à", "thì", "ấy", and "ờ".</li>
+  <li> Insertion: Irrelevant words were inserted.</li>
+  <li> Repetition: Unnecessarily repeated words or phrases, resulting in unnatural output. Examples: "là là là", "đã đã đã"</li>
+  <li> Deletion: Key words or phrases were omitted entirely. In several cases, the transcribed text was noticeably shorter than the reference text.</li>
+</ul>
+</p>
 <p>
-  
+  To understand the difference between the finetuned and pretrain model, we looked compare the errors from the best fine-tuned model and the pretrain models for 2 ways of train-validation-test split: 80-10-10 and 90-5-5. The best models for each split are:
+  <table border="1" style="border-collapse: collapse; text-align: center;">
+  <caption><strong>Best-performing fine-tuned models by data split</strong></caption>
+  <thead>
+    <tr>
+      <th>Split</th>
+      <th>Optimizer</th>
+      <th>Learning Rate</th>
+      <th>Batch Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>80-10-10</td>
+      <td>Adam</td>
+      <td>1e-5</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>90-5-5</td>
+      <td>Adam</td>
+      <td>1e-5</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+</p>
+<p>
+  <b>80-10-10 split model error analysis</b>
+  <figure style="text-align: center;">
+  <img src="images/80-10-10_err.png" alt="Performance chart of best models of 80-10-10 split" style="max-width: 100%; height: auto;">
+  <figcaption><strong>Figure:</strong> Performance of best fine-tuned models on 80-10-10 split</figcaption>
+</figure>
+
+</p>  
+<p>
+  <b>90-5-5 split model error analysis</b>
+  <figure style="text-align: center;">
+  <img src="images/90-5-5_err.png" alt="Performance chart of best models of 90-5-5 split" style="max-width: 100%; height: auto;">
+  <figcaption><strong>Figure:</strong> Performance of best fine-tuned models on 90-5-5 split</figcaption>
+</figure>
+
+</p>  
   Since Nghe An is the hardest dialects, we expect the WER to be highest among these samples. Here are TOP 5 samples that have the highest WER from the Nghe An audio samples:
   <br>
   WER: 0.6000 <br>
