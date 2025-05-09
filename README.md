@@ -127,7 +127,7 @@
   <div class="wrapper">
     <hr>
     
-    <h2 id="abstract">Abstract</h2>
+<h2 id="abstract">Abstract</h2>
 
 <p>
   Vietnamese exhibits diverse phonetic variations across regions, posing significant challenges for state-of-the-art speech-to-text (STT) systems. While recent advances in
@@ -136,20 +136,13 @@ pre-trained models have improved Vietnamese STT overall, their performance on di
 
 <hr>
 
-<h2 id="teaser">Project Pipeline</h2>
-
-<p>A figure that conveys the main idea behind the project or the main application being addressed.</p>
-
-<p class="sys-img"><img src="./csci5541_webtemplate/files/pipeline.png" alt="imgname"></p>
-
-
 <!-- <h3 id="the-timeline-and-the-highlights">Any subsection</h3>
 
 <p>If you need to explain more about your figure</p> -->
 
 <hr>
 
-<h2 id="introduction">Introduction / Background / Motivation</h2>
+<h2 id="introduction">Introduction</h2>
 
 <p>
 Recently, the speech recognition community has made significant progress in building Deep Neural Networks (DNNs) for Speech-to-Text (STT) or Speech-to-Text Recognition (STR) by utilizing vast amounts of training data and high-quality test sets. Studies have shown that while current STT models perform well for high-resource languages like French, English, and Mandarin, low-resource languages experience higher Word Error Rates (WER) due to limited data. This challenge is even more pronounced in languages with diverse phonetic variations and multiple dialects, such as Vietnamese (Ahlawat et al., 2025).
@@ -177,6 +170,7 @@ Based on our pipeline, we take in input as audio files from the dataset: <a href
 </p>
 
 <b>Pipeline</b>
+<p class="sys-img"><img src="./csci5541_webtemplate/files/pipeline.pdf" alt="imgname"></p>
 <p> Using audio inputs, we first generate Vietnamese transcripts with the pre-trained PhoWhisper model. Based on its initial performance in terms of Word Error Rate (WER) and BERTScore, we fine-tune PhoWhisper to improve upon these baseline results. We then use PhoGPT to convert the dialectal transcripts into standardized Vietnamese. For benchmarking purposes, we also evaluate a parallel pipeline using OpenAI’s Whisper-large for automatic speech recognition (ASR) and GPT-4 for text normalization—two of the most advanced models in global speech and language processing. </p> 
 <p> We consider this a reliable framework due to our deliberate selection of dialects that represent the most commonly spoken regional variations in Vietnamese. Additionally, both PhoWhisper and PhoGPT are models specifically fine-tuned for the Vietnamese language, making them well-suited for this task. Our study also includes a comparative analysis against OpenAI’s Whisper-large and GPT-4 to assess the effectiveness of language-specific versus general-purpose models. </p> 
 <p> The novelty of our work lies in its in-depth exploration of how to leverage large language models (LLMs) to translate dialectal text into standardized Vietnamese, rather than simply training on a mixture of dialectal and standard inputs. This approach enhances Vietnamese STT systems by moving beyond basic transcription, enabling accurate and semantically coherent translation across dialects, and ultimately improving accessibility and communication for Vietnamese speakers worldwide. </p>
@@ -186,7 +180,7 @@ Based on our pipeline, we take in input as audio files from the dataset: <a href
     
 <h2 id="results">Results</h2>
 <p>
-<b>PhoWhisper-large-1.55B pretrained model</b>
+<h3>PhoWhisper-large-1.55B pretrained model</h3>
 </p>
 <p>
   To evaluate the output text, we depend on the WER and BERTScore metric to measure how accurate the transcripts are compared to the reference text. 
@@ -242,7 +236,7 @@ Based on our pipeline, we take in input as audio files from the dataset: <a href
 </div>
 <br><br> -->
 <p>
-<b>PhoWhisper-large-1.55B finetuned model</b>
+<h3>PhoWhisper-large-1.55B finetuned model</h3>
 Initially, we performed finetuning for the model with 830 audio samples as the train set, 104 audio samples for the validation set, 104 audio samples for the test set. The following WER and BERT Score is obtained
 <table>
   <thead>
@@ -321,19 +315,21 @@ Since the output of the finetuned model is significantly worse compared to the b
 </table>
 The columns WER change % and BERTScore change % is the change compared to the WER and BERTScore of the pretrained models. Table 3 shows that the best model obtained is the PhoWhisper-large (1.55B) that is finetuned on the Adam optimizer with learning rate 1e-5. The table also suggests that there is a slight trade off between the BERTScore and WER metric, as the model with highest BERTScore has a lower WER, and the model with the highest WER has a lower BERTScore. Another finding was that most models that were fine-tuned with a 80-10-10 train-validation-test split performs better that which was fine-tuned with a 90-5-5 train-validation-test split.
 </p>
+
+<h3>Evaluation of the full pipeline after fine-tuning</h3> 
+<h4>PhoWhisper + PhoGPT Pipeline (80-10-10 split): </h4>
 <p>
-<b>Evaluation of the full pipeline after fine-tuning</b> <br>
-<b>PhoWhisper + PhoGPT Pipeline (80-10-10 split): </b>
 Using the best-performing fine-tuned PhoWhisper model, we tested the full pipeline by passing its dialectal transcriptions to PhoGPT-4B-Chat with the instruction “Translate this sentence into standard Vietnamese.” On the test set with an 80-10-10 split, PhoWhisper produced an average WER of 0.0796. However, after standardization with PhoGPT, the WER increased sharply to 0.7022. While some increase is expected due to the shift from phonetic to semantic output, the magnitude was unusually high. Manual inspection revealed that PhoGPT often omitted dialect-specific words or restructured sentences rather than translating terms directly, suggesting a preference for sentence-level fluency and coherence over word-level fidelity.
 </p>
 
+
+<h4>OpenAI-Whisper + GPT4 pipeline baseline</h4>
 <p>
-<b>OpenAI-Whisper + GPT4 pipeline baseline</b>
 We evaluated the OpenAI Whisper model on 280 audio recordings from the Nghệ An dialect. Despite explicitly setting the language to Vietnamese, the model frequently produced incoherent transcriptions containing a mixture of Vietnamese and unrelated foreign words. The average WER reached 1.741, indicating severe transcription failure. As a result, we did not proceed with the standardization step using GPT-4. These findings demonstrate that OpenAI Whisper struggles significantly with dialectal Vietnamese, especially in challenging cases like Nghệ An, and reinforce the need for models fine-tuned on Vietnamese speech for robust dialect-aware STT applications.
 </p>
 
-<p><b>Error Analysis</b></p>
-<p><b>PhoWhisper-Large (1.55B)</b></p>
+<h3>Error Analysis</h3>
+<h4>PhoWhisper-Large (1.55B)</h4>
 <p> Common errors: <br>
 <ul>
   <li> Misrecognition: Some words were misrecognized and substituted with similar-sounding but incorrect words.</li>
