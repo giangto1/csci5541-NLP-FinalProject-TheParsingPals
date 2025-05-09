@@ -130,20 +130,17 @@
     <h2 id="abstract">Abstract</h2>
 
 <p>
-  Vietnamese exhibits diverse phonetic variations, which pose significant challenges for state-of-the-art speech-to-text systems. 
-  While progress in Vietnamese speech-to-text technology has been substantial, with advancements in pre-trained models and speech recognition systems, 
-  their performance in handling multiple dialects remains poor. To address this, we aim to fine-tune existing models to improve their ability to translate various dialects more effectively. 
-  Building on this, we hope to develop a system where the model processes dialectal speech and, instead of providing a direct word-for-word transcription, generates standard Vietnamese text 
-  -  bridging communication gaps within the community.
+  Vietnamese exhibits diverse phonetic variations across regions, posing significant challenges for state-of-the-art speech-to-text (STT) systems. While recent advances in
+pre-trained models have improved Vietnamese STT overall, their performance on dialectal speech remains limited. To address this issue, our project focuses on developing a pipeline that transcribes dialectal Vietnamese speech into standardized Vietnamese text – instead of providing a direct word-for-word transcription, the system generates standard Vietnamese to help bridge communication gaps within the community. Our work demonstrates the feasibility of this approach, showing that fine-tuning existing models on curated dialectal speech data can significantly improve performance in dialectal STT. In addition, we propose future directions for advancing Vietnamese STT, including more robust model adaptation and dialect-aware dataset development.
 </p>
 
 <hr>
 
-<h2 id="teaser">Teaser Figure</h2>
+<h2 id="teaser">Project Pipeline</h2>
 
 <p>A figure that conveys the main idea behind the project or the main application being addressed.</p>
 
-<p class="sys-img"><img src="./csci5541_webtemplate/files/teaser.png" alt="imgname"></p>
+<p class="sys-img"><img src="./csci5541_webtemplate/files/pipeline.png" alt="imgname"></p>
 
 
 <!-- <h3 id="the-timeline-and-the-highlights">Any subsection</h3>
@@ -155,18 +152,10 @@
 <h2 id="introduction">Introduction / Background / Motivation</h2>
 
 <p>
- 
-Recently, the speech recognition community has made significant progress in building Deep Neural Networks (DNNs) for Speech-to-Text (STT) or
-Speech-to-Text Recognition (STR) by utilizing vast amounts of training data and high-quality test sets.
-Studies have shown that while current STT models perform well for high-resource languages
-like French, English, and Mandarin, low-resource languages experience higher Word Error Rates
-(WER) due to limited data. This challenge is even more pronounced in languages with diverse
-phonetic variations and multiple dialects, such as Vietnamese (Ahlawat et al., 2025). 
+Recently, the speech recognition community has made significant progress in building Deep Neural Networks (DNNs) for Speech-to-Text (STT) or Speech-to-Text Recognition (STR) by utilizing vast amounts of training data and high-quality test sets. Studies have shown that while current STT models perform well for high-resource languages like French, English, and Mandarin, low-resource languages experience higher Word Error Rates (WER) due to limited data. This challenge is even more pronounced in languages with diverse phonetic variations and multiple dialects, such as Vietnamese (Ahlawat et al., 2025).
 </p>
 <p>
-Dialectal regions in Vietnam can have significantly different vocabularies, pronunciations, and tones, creating language
-barriers even among Vietnamese speakers from different provinces. With recent advancements in Vietnamese NLP and Speech-to-Text systems, we aim to build
-an STT pipeline that processes dialectal speech and, instead of providing a direct word-for-word transcription, generates standardized Vietnamese text.
+Dialectal regions in Vietnam can have significantly different vocabularies, pronunciations, and tones, creating language barriers even among Vietnamese speakers from different provinces. With recent advancements in Vietnamese NLP and Speech-to-Text systems, we aim to build an STT pipeline that processes dialectal speech and, instead of providing a direct word-for-word transcription, generates standardized Vietnamese text.
 </p>
 
 <hr>
@@ -174,55 +163,33 @@ an STT pipeline that processes dialectal speech and, instead of providing a dire
 <h2 id="approach">Approach</h2>
 
 <p>
-<b>What did you do exactly? How did you solve the problem? Why did you think it would be successful? Is anything new in your approach?</b>
+<b>Dataset</b>
 </p>
 
 <p>
-Based on our pipeline, we take in input as audio files from the dataset: <a href="https://huggingface.co/datasets/nguyendv02/ViMD_Dataset">Multi-Dialect Vietnamese</a>, which is composed of 102.56 hours of data, representing 63 dialects in Vietnam. 
-Due to the time limit in this course, we have chosen 4/5 dialects that has representative characterics for major dialects. The 4 dialects we chose are: 
+Based on our pipeline, we take in input as audio files from the dataset: <a href="https://huggingface.co/datasets/nguyendv02/ViMD_Dataset">Multi-Dialect Vietnamese</a>, which is composed of 102.56 hours of data, representing 63 dialects in Vietnam. The dataset also contains reference text, which we will use as labels to compare with the LLMs' outputs.  Due to the time limit in this course, we have chosen 4 dialects that has representative characterics for major dialects. The 4 dialects we chose are: 
 <ul>
-  <li>Hanoi (representative of Northern provinces)</li>
-  <li>Saigon (representative of Southern provinces)</li>
-  <li>Hue (representative of Central provinces)</li>
-  <li>Nghe An (representative of dialects that contain heavy accents and unique local vocabulary) </li> 
+  <li>Level 1 (Easy) Standard Vietnamese, to verify model performance in a non-dialectal setting. The specific dialect used for this Ha Noi dialect.</li>
+  <li>Level 2 (Medium - Lexical) Huế dialect (Central Vietnam), selected for its distinct vocabulary.</li>
+  <li>Level 3 (Medium - Tonal) Hồ Chí Minh City dialect (Southern Vietnam), chosen for its tonal shifts.</li>
+  <li>Level 4 (Hard) Nghệ An/Hà Tĩnh dialect, widely regarded as the most difficult due to heavy tone merging and extensive vocabulary divergence from the standard. </li> 
 </ul>
 </p>
-<p>
-Using this audio input, we used PhoWhisper to generate the Vietnamese transcripts, and then we will fine tune PhoBERT to
-generate the standardized translation to the dialectal transcripts.
-</p>
-<p>
-We also collect audio data of dense dialectal voices from Youtube, Tiktok to add to our dataset. We will have to annotate these audio with standard language to get a reference text to compare with the PhoBert output. We expect to obtain 45 minutes - 1 hour worth of audio for each dialect.
-</p>
-<p>
-We believe this is a reliable framework because of our strategy in choosing dialects, which is representative of all different common dialects in Vietnamese language.
-Besides, the PhoWhisper and PhoBERT are model already fine tuned models in Vietnamese language. Our study will also include a comparative analysis on other LLMs such as 
-GPT-3 and Qwen-3.
-</p>
-<p>
-The novelty of our work lies in our in-depth investigation of how to leverage large language models (LLMs) to translate dialectal text into standardized language, rather than simply training LLMs on a mixture of dialectal and standardized text. This approach also advances Vietnamese speech-to-text systems by moving beyond transcription to include translation into standardized language. 
 
-</p>
-
-<p>
-<b>What problems did you anticipate? What problems did you encounter? Did the very first thing you tried work?</b>
-</p>
-
-<p>
-<ol>
-  <li>We are not sure which dialect we should chose as the fifth one </li>
-  <li>The audio in the datasets that we currently use don't include many local vocabulary, which is an essential part of a dialect. Because of this, the result of the PhoWhisper is very close to the text transcription already, making our work of translating dialect to standard language not obvious.</li>
-</ol>
-</p>
+<b>Pipeline</b>
+<p> Using audio inputs, we first generate Vietnamese transcripts with the pre-trained PhoWhisper model. Based on its initial performance in terms of Word Error Rate (WER) and BERTScore, we fine-tune PhoWhisper to improve upon these baseline results. We then use PhoGPT to convert the dialectal transcripts into standardized Vietnamese. For benchmarking purposes, we also evaluate a parallel pipeline using OpenAI’s Whisper-large for automatic speech recognition (ASR) and GPT-4 for text normalization—two of the most advanced models in global speech and language processing. </p> 
+<p> We consider this a reliable framework due to our deliberate selection of dialects that represent the most commonly spoken regional variations in Vietnamese. Additionally, both PhoWhisper and PhoGPT are models specifically fine-tuned for the Vietnamese language, making them well-suited for this task. Our study also includes a comparative analysis against OpenAI’s Whisper-large and GPT-4 to assess the effectiveness of language-specific versus general-purpose models. </p> 
+<p> The novelty of our work lies in its in-depth exploration of how to leverage large language models (LLMs) to translate dialectal text into standardized Vietnamese, rather than simply training on a mixture of dialectal and standard inputs. This approach enhances Vietnamese STT systems by moving beyond basic transcription, enabling accurate and semantically coherent translation across dialects, and ultimately improving accessibility and communication for Vietnamese speakers worldwide. </p>
 
 <hr>
+<b></b>
     
 <h2 id="results">Results</h2>
 <p>
-<b>How did you measure success? What experiments were used? What were the results, both quantitative and qualitative? Did you succeed? Did you fail? Why?</b>
+<b>PhoWhisper-large-1.55B pretrained model</b>
 </p>
 <p>
-  Since we have only generated the transcripts of audio using PhoWhisper, we depend on the WER metric to measure how accurate the transcripts are compared to the text reference. 
+  To evaluate the output text, we depend on the WER and BERTScore metric to measure how accurate the transcripts are compared to the reference text. 
 </p>
 
 <table>
@@ -243,10 +210,17 @@ The novelty of our work lies in our in-depth investigation of how to leverage la
       <td style="text-align: center">0.1141</td>
       <td style="text-align: center">0.1105</td>
     </tr>
+    <tr>
+      <td style="text-align: center"><strong>BERT</strong></td>
+      <td style="text-align: center">0.9124</td>
+      <td style="text-align: center">0.9057</td>
+      <td style="text-align: center">0.9176</td>
+      <td style="text-align: center">0.9215</td>
+    </tr>
   </tbody>
   <caption>Table 1. WER for the PhoWhisper's transcription</caption>
 </table>
-
+<b>PhoWhisper-large-1.55B finetuned model</b>
 <table>
   <thead>
     <tr>
