@@ -269,7 +269,7 @@ Initially, we performed finetuning for the model with 830 audio samples as the t
 Since the output of the finetuned model is significantly worse compared to the baseline model, we exhaustively fine-tuned the model by varying the parameters: optimizer, learning rate, batch size, and train-validation-test split. We also just focus on 1 dialect (Nghe An - level 4) due to time constraint and wanting to make sure of the quality of the outputs. We use the following parameter combinations and report the WER and BERTScore below:
 
 <table border="1" style="border-collapse: collapse; text-align: center;">
-  <caption><strong>Table 3. Percentage change in WER and BERTScore relative to baseline</strong></caption>
+  <caption>Table 3. Percentage change in WER and BERTScore relative to baseline</caption>
   <thead>
     <tr>
       <th>Split</th>
@@ -341,7 +341,7 @@ We evaluated the OpenAI Whisper model on 280 audio recordings from the Nghệ An
 <p>
   To understand the difference between the finetuned and pretrain model, we looked compare the errors from the best fine-tuned model and the pretrain models for 2 ways of train-validation-test split: 80-10-10 and 90-5-5. The best models for each split are:
   <table border="1" style="border-collapse: collapse; text-align: center;">
-  <caption><strong>Best-performing fine-tuned models by data split</strong></caption>
+  <caption>Table 4. Best-performing fine-tuned models by data split</caption>
   <thead>
     <tr>
       <th>Split</th>
