@@ -375,47 +375,22 @@ We evaluated the OpenAI Whisper model on 280 audio recordings from the Nghệ An
 <p>
   <b>80-10-10 split model error analysis</b>
   <figure style="text-align: center;">
-  <img src="./csci5541_webtemplate/files/80-10-10_err.png" alt="Performance chart of best models of 80-10-10 split" style="max-width: 100%; height: auto;">
-  <figcaption><strong>Figure:</strong> Performance of best fine-tuned models on 80-10-10 split</figcaption>
+  <img src="./csci5541_webtemplate/files/80-10-10_err.png" alt="Performance chart of best models of 80-10-10 split" style="max-width: 100%; height: auto;"> <br>
+  <figcaption><strong>Figure 5:</strong> Performance of best fine-tuned models on 80-10-10 split</figcaption>
 </figure>
 
 </p>  
 <p>
   <b>90-5-5 split model error analysis</b>
   <figure style="text-align: center;">
-  <img src="./csci5541_webtemplate/files/90-5-5_err.png" alt="Performance chart of best models of 90-5-5 split" style="max-width: 100%; height: auto;">
-  <figcaption><strong>Figure:</strong> Performance of best fine-tuned models on 90-5-5 split</figcaption>
+  <img src="./csci5541_webtemplate/files/90-5-5_err.png" alt="Performance chart of best models of 90-5-5 split" style="max-width: 100%; height: auto;"> <br>
+  <figcaption><strong>Figure 6:</strong> Performance of best fine-tuned models on 90-5-5 split</figcaption>
 </figure>
-
-</p>  
-  Since Nghe An is the hardest dialects, we expect the WER to be highest among these samples. Here are TOP 5 samples that have the highest WER from the Nghe An audio samples:
-  <br>
-  WER: 0.6000 <br>
-  REF: cảm thấy tự tin hơn <br>
-  HYP: <b>ờ</b> cảm thấy <b>a</b> tự tin hơn <b>hơn</b> <br>
-  <b>Error type: added random words</b> <br>
-  <br>
-  WER: 0.5833<br>
-  REF: thấy an tâm thôi cứ tốt sức khỏe cho cộng đồng thôi <br>
-  HYP: thấy an tâm thôi <b>thôi</b> <b>tôi thắp</b> cho sức khoẻ <b>ổn đồng</b> thôi <br>
-  <b>Error type: duplicate words, spelling, grammar, word order</b> <br>
-  <br>
-  WER: 0.4167 <br>
-  REF: hôm nay tôi rất là vinh dự được khám của các ba bác sĩ chữa để mà tư vấn về sức khỏe nhất là xương khớp nghe tôi mừng quá chỉ dẫn rất là nhiệt tình <br>
-  HYP: <b>sẽ ra bữa</b> hôm nay tôi rất vinh dự được ra khám của các bác sĩ chữa để mà tư vấn về sức khoẻ nhất nhất là cái là <b>sương</b> khớp nghe tôi mừng quá vì nó <b>chỉ</b> chỉ dẫn rất nhiệt tình <br>
-  <b>Error type: spelling, added random words, duplicate words, missing words</b> <br>
-  <br>
-  WER: 0.3111 <br>
-  REF: ủy ban nhân dân phường với coi như là đảng ủy phường kêu gọi thì tất cả những bác sĩ chúng tôi đều đăng ký hết tôi là người cao tuổi nhất coi như là cũng là người coi như là xung phong   tham gia <br>
-  HYP: ủy ban nhân dân phường mới lại coi như đã đồng ý phường kêu gọi thì tất cả những bác sĩ là chúng tôi đều đăng ký hết tôi là <b>cái người</b> mà cao tuổi nhất là cũng là coi như là <b>cái người</b> mà coi như là xung phong tham gia <br>
-  <b>Error type: duplicate words </b> <br>
-  <br>
-  WER: 0.3103 <br>
-  REF: em cũng muốn là được sử dụng cái kỳ thi đánh giá năng lực này giống như là một cái con đường khác được xét tuyển vào đại học <br>
-  HYP: em cũng muốn là được ờ sử dụng cái <b>kỳ thị giáng lực </b> này giống như một cái con đường khác ờ được <b>xét tiểu</b> đại học <br>
-  <b>Error type: spelling, contain filler words</b> <br>
-
 </p>
+<p>
+  It can be seen from the 2 figures above that an improvement in avoiding some error type doesn't guarantee a better model overall. For example, the 80-10-10 best model makes less disfluency mistakes, but makes a lot more insertion mistakes compared to the pretrain model. Similarly, the 90-5-5 best model makes less insertion mistakes, but makes significantly more disfluency and misrecognition mistakes. Overall, based on thorough error analysis of the outputs from PhoWhisper-large (1.55B) fine-tuned model on Adam optimizer, learning rate 1e-5. It is uncertain that the finetuned model is absolutely better than the pretrained model due to inconsistent improvements.
+</p>
+
 <hr>
 
 
