@@ -93,7 +93,7 @@
           </span>
           <span class="link-block">
             <a
-              href=""
+              href="./csci5541_webtemplate/files/CSCI5541_The_Parsing_Pals_Final_Report.pdf"
               target="_blank"
               class="external-link button is-normal is-rounded is-dark is-outlined"
             >
@@ -102,12 +102,11 @@
           </span>      
           <span class="link-block">
             <a
-              href=""
+              href="https://github.com/chile2706/dialect-to-official-vietnamese?fbclid=IwY2xjawKKazVleHRuA2FlbQIxMABicmlkETFnUWpwYm1FaXhHT2x5UmJvAR5XvAyaIl7MBfO2-8Sr89WzIiY-zHrOs97t_XFl6wHEnBhTYE5w84pBn3TXjA_aem_ZlvNkTeGKanzueFs-xDwMA#"
               target="_blank"
               class="external-link button is-normal is-rounded is-dark is-outlined"
             >
-            <span>Model Weights</span>
-            </a>
+            
           </span>              
         </div>
       </div>
