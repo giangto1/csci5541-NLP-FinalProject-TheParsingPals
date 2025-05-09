@@ -241,6 +241,7 @@ Based on our pipeline, we take in input as audio files from the dataset: <a href
 <img style="height: 300px;" alt="" src="./files/results.png">
 </div>
 <br><br> -->
+<p>
 <b>PhoWhisper-large-1.55B finetuned model</b>
 Initially, we performed finetuning for the model with 830 audio samples as the train set, 104 audio samples for the validation set, 104 audio samples for the test set. The following WER and BERT Score is obtained
 <table>
@@ -275,7 +276,7 @@ Initially, we performed finetuning for the model with 830 audio samples as the t
 Since the output of the finetuned model is significantly worse compared to the baseline model, we exhaustively fine-tuned the model by varying the parameters: optimizer, learning rate, batch size, and train-validation-test split. We use the following parameter combinations and report the WER and BERTScore below:
 
 <table border="1" style="border-collapse: collapse; text-align: center;">
-  <caption><strong>Percentage change in WER and BERTScore relative to baseline</strong></caption>
+  <caption><strong>Table 3. Percentage change in WER and BERTScore relative to baseline</strong></caption>
   <thead>
     <tr>
       <th>Split</th>
@@ -318,7 +319,18 @@ Since the output of the finetuned model is significantly worse compared to the b
     <tr><td>SGD</td><td>1e-6</td><td>12.66</td><td>-0.28</td></tr>
   </tbody>
 </table>
+The columns WER change % and BERTScore change % is the change compared to the WER and BERTScore of the pretrained models. Table 3 shows that the best model obtained is the PhoWhisper-large (1.55B) that is finetuned on the Adam optimizer with learning rate 1e-5. The table also suggests that there is a slight trade off between the BERTScore and WER metric, as the model with highest BERTScore has a lower WER, and the model with the highest WER has a lower BERTScore. Another finding was that most models that were fine-tuned with a 80-10-10 train-validation-test split performs better that which was fine-tuned with a 90-5-5 train-validation-test split.
+</p>
+<p>
+<b>Evaluation of the full pipeline after fine-tuning</b>
+<b>PhoWhisper + PhoGPT Pipeline (80-10-10 split): </b>
+Using the best-performing fine-tuned PhoWhisper model, we tested the full pipeline by passing its dialectal transcriptions to PhoGPT-4B-Chat with the instruction “Translate this sentence into standard Vietnamese.” On the test set with an 80-10-10 split, PhoWhisper produced an average WER of 0.0796. However, after standardization with PhoGPT, the WER increased sharply to 0.7022. While some increase is expected due to the shift from phonetic to semantic output, the magnitude was unusually high. Manual inspection revealed that PhoGPT often omitted dialect-specific words or restructured sentences rather than translating terms directly, suggesting a preference for sentence-level fluency and coherence over word-level fidelity.
+</p>
 
+<p>
+<b>OpenAI-Whisper + GPT4 pipeline baseline</b>
+We evaluated the OpenAI Whisper model on 280 audio recordings from the Nghệ An dialect. Despite explicitly setting the language to Vietnamese, the model frequently produced incoherent transcriptions containing a mixture of Vietnamese and unrelated foreign words. The average WER reached 1.741, indicating severe transcription failure. As a result, we did not proceed with the standardization step using GPT-4. These findings demonstrate that OpenAI Whisper struggles significantly with dialectal Vietnamese, especially in challenging cases like Nghệ An, and reinforce the need for models fine-tuned on Vietnamese speech for robust dialect-aware STT applications.
+</p>
 
 <p><b>Error Analysis</b></p>
 <p>
