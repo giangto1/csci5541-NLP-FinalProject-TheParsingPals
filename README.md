@@ -35,7 +35,7 @@
           </div>
           <p>
                         
-              Member 1: Bang Ly
+              Member 1: <br> Bang Ly
             
           </p>
         </div>
@@ -84,7 +84,7 @@
           <!-- Github link -->
           <span class="link-block">
             <a
-              href=""
+              href="https://github.com/chile2706/dialect-to-official-vietnamese?fbclid=IwY2xjawKKazVleHRuA2FlbQIxMABicmlkETFnUWpwYm1FaXhHT2x5UmJvAR5XvAyaIl7MBfO2-8Sr89WzIiY-zHrOs97t_XFl6wHEnBhTYE5w84pBn3TXjA_aem_ZlvNkTeGKanzueFs-xDwMA#"
               target="_blank"
               class="external-link button is-normal is-rounded is-dark is-outlined"
             >
