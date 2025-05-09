@@ -275,49 +275,50 @@ Initially, we performed finetuning for the model with 830 audio samples as the t
 Since the output of the finetuned model is significantly worse compared to the baseline model, we exhaustively fine-tuned the model by varying the parameters: optimizer, learning rate, batch size, and train-validation-test split. We use the following parameter combinations and report the WER and BERTScore below:
 
 <table border="1" style="border-collapse: collapse; text-align: center;">
-  <caption><strong>WER and BERTScore under different training configurations</strong></caption>
+  <caption><strong>Percentage change in WER and BERTScore relative to baseline</strong></caption>
   <thead>
     <tr>
       <th>Split</th>
       <th>Batch</th>
       <th>Optimizer</th>
       <th>LR</th>
-      <th>WER</th>
-      <th>BERT</th>
+      <th>WER % Change</th>
+      <th>BERT % Change</th>
     </tr>
   </thead>
   <tbody>
-    <!-- 80-10-10 split -->
-    <tr><td rowspan="12">80-10-10</td><td rowspan="6">3</td><td>AdamW</td><td>1e-5</td><td>0.1521</td><td>0.9389</td></tr>
-    <tr><td>AdamW</td><td>1e-6</td><td>0.2442</td><td>0.9117</td></tr>
-    <tr><td>Adam</td><td>1e-5</td><td>0.1515</td><td>0.9425</td></tr>
-    <tr><td>Adam</td><td>1e-6</td><td>0.2753</td><td>0.9043</td></tr>
-    <tr><td>SGD</td><td>1e-5</td><td>0.2165</td><td>0.9155</td></tr>
-    <tr><td>SGD</td><td>1e-6</td><td>0.2188</td><td>0.9147</td></tr>
+    <!-- 80-10-10 -->
+    <tr><td rowspan="12">80-10-10</td><td rowspan="6">3</td><td>AdamW</td><td>1e-5</td><td>-30.48</td><td>2.65</td></tr>
+    <tr><td>AdamW</td><td>1e-6</td><td>11.61</td><td>-0.33</td></tr>
+    <tr><td>Adam</td><td>1e-5</td><td>-30.76</td><td><b>3.04</b></td></tr>
+    <tr><td>Adam</td><td>1e-6</td><td>25.82</td><td>-1.14</td></tr>
+    <tr><td>SGD</td><td>1e-5</td><td>-1.05</td><td>0.09</td></tr>
+    <tr><td>SGD</td><td>1e-6</td><td>0.00</td><td>0.00</td></tr>
 
-    <tr><td rowspan="6">12</td><td>AdamW</td><td>1e-5</td><td>0.1522</td><td>0.9366</td></tr>
-    <tr><td>AdamW</td><td>1e-6</td><td>0.2176</td><td>0.9206</td></tr>
-    <tr><td>Adam</td><td>1e-5</td><td>0.1458</td><td>0.9382</td></tr>
-    <tr><td>Adam</td><td>1e-6</td><td>0.2165</td><td>0.9200</td></tr>
-    <tr><td>SGD</td><td>1e-5</td><td>0.2182</td><td>0.9147</td></tr>
-    <tr><td>SGD</td><td>1e-6</td><td>0.2188</td><td>0.9147</td></tr>
+    <tr><td rowspan="6">12</td><td>AdamW</td><td>1e-5</td><td>-30.39</td><td>2.39</td></tr>
+    <tr><td>AdamW</td><td>1e-6</td><td>-0.55</td><td>0.65</td></tr>
+    <tr><td>Adam</td><td>1e-5</td><td><b>-33.37</b></td><td>2.57</td></tr>
+    <tr><td>Adam</td><td>1e-6</td><td>-1.05</td><td>0.58</td></tr>
+    <tr><td>SGD</td><td>1e-5</td><td>-0.27</td><td>0.00</td></tr>
+    <tr><td>SGD</td><td>1e-6</td><td>0.00</td><td>0.00</td></tr>
 
-    <!-- 90-5-5 split -->
-    <tr><td rowspan="12">90-5-5</td><td rowspan="6">3</td><td>AdamW</td><td>1e-5</td><td>0.1755</td><td>0.9350</td></tr>
-    <tr><td>AdamW</td><td>1e-6</td><td>0.2194</td><td>0.9202</td></tr>
-    <tr><td>Adam</td><td>1e-5</td><td>0.1665</td><td>0.9361</td></tr>
-    <tr><td>Adam</td><td>1e-6</td><td>0.2194</td><td>0.9233</td></tr>
-    <tr><td>SGD</td><td>1e-5</td><td>0.2452</td><td>0.9129</td></tr>
-    <tr><td>SGD</td><td>1e-6</td><td>0.2452</td><td>0.9122</td></tr>
+    <!-- 90-5-5 -->
+    <tr><td rowspan="12">90-5-5</td><td rowspan="6">3</td><td>AdamW</td><td>1e-5</td><td>-19.79</td><td>2.22</td></tr>
+    <tr><td>AdamW</td><td>1e-6</td><td>0.27</td><td>0.60</td></tr>
+    <tr><td>Adam</td><td>1e-5</td><td>-23.91</td><td>2.34</td></tr>
+    <tr><td>Adam</td><td>1e-6</td><td>0.27</td><td>0.94</td></tr>
+    <tr><td>SGD</td><td>1e-5</td><td>12.06</td><td>-0.20</td></tr>
+    <tr><td>SGD</td><td>1e-6</td><td>12.06</td><td>-0.27</td></tr>
 
-    <tr><td rowspan="6">12</td><td>AdamW</td><td>1e-5</td><td>0.1716</td><td>0.9368</td></tr>
-    <tr><td>AdamW</td><td>1e-6</td><td>0.2194</td><td>0.9226</td></tr>
-    <tr><td>Adam</td><td>1e-5</td><td>0.1729</td><td>0.9354</td></tr>
-    <tr><td>Adam</td><td>1e-6</td><td>0.2245</td><td>0.9212</td></tr>
-    <tr><td>SGD</td><td>1e-5</td><td>0.2452</td><td>0.9122</td></tr>
-    <tr><td>SGD</td><td>1e-6</td><td>0.2465</td><td>0.9121</td></tr>
+    <tr><td rowspan="6">12</td><td>AdamW</td><td>1e-5</td><td>-21.56</td><td>2.42</td></tr>
+    <tr><td>AdamW</td><td>1e-6</td><td>0.27</td><td>0.87</td></tr>
+    <tr><td>Adam</td><td>1e-5</td><td>-20.99</td><td>2.26</td></tr>
+    <tr><td>Adam</td><td>1e-6</td><td>2.61</td><td>0.71</td></tr>
+    <tr><td>SGD</td><td>1e-5</td><td>12.06</td><td>-0.27</td></tr>
+    <tr><td>SGD</td><td>1e-6</td><td>12.66</td><td>-0.28</td></tr>
   </tbody>
 </table>
+
 
 <p><b>Error Analysis</b></p>
 <p>
